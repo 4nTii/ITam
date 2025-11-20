@@ -1,0 +1,51 @@
+# ITam – IT Asset Management
+
+ITam is an open‑source IT Asset Management (ITAM) application designed to help organizations efficiently track, manage, and maintain their hardware, software, and digital assets. Built with simplicity and transparency in mind, ITam provides a unified interface to oversee your IT inventory, lifecycle events, and operational status.
+
+This application is developed for **non‑profit use**, offering essential ITAM capabilities without licensing fees or proprietary restrictions. By leveraging community-driven development, ITam aims to provide a dependable and extensible platform for managing IT assets.
+
+## Features
+
+- Asset tracking for hardware and software
+- Lifecycle management (procurement, deployment, maintenance, retirement)
+- User and department assignment
+- Vendor and contract management
+- Custom asset attributes
+- Reporting and data export tools
+- API for integrations
+
+## Terms of Use
+
+ITam is released as **open-source software** and is intended for **non‑profit use only**. Users are free to:
+
+- Download, use, and modify the application
+- Distribute modified versions under the same open-source terms
+- Contribute improvements and enhancements to the project
+
+Users may **not**:
+
+- Use ITam for commercial purposes
+- Sell or resell the software or derived works
+- Charge for services that exclusively rely on ITam without providing additional value
+
+Refer to the included license file for full legal details.
+
+## Getting Started
+
+1. Clone the repository.
+2. Install required dependencies.
+3. Configure environment variables.
+4. Run database migrations.
+5. Launch the application.
+
+## Contributing
+
+We welcome contributions! Whether you want to fix bugs, add new features, or enhance documentation, please submit a pull request. Be sure to follow the project's coding and documentation standards.
+
+## Support
+
+This project is community-supported. For assistance, feature requests, or bug reports, please open an issue in the repository.
+
+---
+
+Thank you for using ITam and supporting open-source, non‑profit software development.
