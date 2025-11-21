@@ -1,0 +1,47 @@
+.login-container a {
+  cursor: pointer;
+}
+
+/* Full-height container */
+.login-container {
+  height: 100vh;
+  background: #f5f6fa;
+}
+
+/* Desktop login box */
+.login-box {
+  width: 480px;
+  background: #fff;
+}
+
+/* Responsive logo */
+.login-logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%; /* ne dépasse jamais son parent */
+  height: auto;
+  width: 100px; /* taille de base */
+}
+
+/* Large tablets & medium devices (<= 992px) */
+@media (max-width: 992px) {
+  .login-box {
+    width: 350px;
+  }
+
+  .login-logo {
+    width: 85px;
+  }
+}
+
+/* Small devices & mobile (<= 576px) */
+@media (max-width: 576px) {
+  .login-box {
+    width: 90%; /* prend presque tout l'écran */
+    padding: 20px;
+  }
+
+  .login-logo {
+    width: 65px; /* logo plus petit pour mobile */
+  }
+}
