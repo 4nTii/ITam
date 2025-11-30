@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./UIButton.css";
 
 /**
  * UIButton — bouton réutilisable et générique pour l'ensemble du projet
@@ -13,10 +14,9 @@ import PropTypes from "prop-types";
  * - loading : boolean (affiche un spinner)
  */
 export default function UIButton({
+  id = "",
   label = "Button",
   onClick,
-  variant = "primary",
-  size = "md",
   disabled = false,
   loading = false,
   type = "button",
@@ -25,24 +25,15 @@ export default function UIButton({
   const baseClass =
     "btn d-flex align-items-center justify-content-center gap-2";
 
-  const variantClass = {
-    primary: "btn-success text-white",
-    secondary: "btn-secondary",
-    danger: "btn-danger",
-    outline: "btn-outline-success",
-  }[variant];
-
-  const sizeClass = {
-    sm: "btn-sm",
-    md: "",
-    lg: "btn-lg",
-  }[size];
-
+  const handleClick = (event) => {
+    onClick && onClick(event);
+  };
   return (
     <button
+      id={id}
       type={type}
-      className={`${baseClass} ${variantClass} ${sizeClass} ${className}`}
-      onClick={onClick}
+      className={`${baseClass} ${className}`}
+      onClick={handleClick}
       disabled={disabled || loading}
     >
       {loading && (
@@ -55,10 +46,9 @@ export default function UIButton({
 }
 
 UIButton.propTypes = {
+  id: PropTypes.string.isRequired,
   label: PropTypes.string,
   onClick: PropTypes.func,
-  variant: PropTypes.oneOf(["primary", "secondary", "danger", "outline"]),
-  size: PropTypes.oneOf(["sm", "md", "lg"]),
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
   type: PropTypes.string,

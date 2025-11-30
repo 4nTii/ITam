@@ -1,9 +1,16 @@
 import { LangMessages } from "../../lang/lang";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import UIButton from "../../components/uiElements/UIButton";
+import UICheckbox from "../../components/uiElements/UICheckbox";
+import { useEffect, useState } from "react";
 
 function Login() {
   const navigate = useNavigate();
+  const [rememberMe, setRememberMe] = useState(false);
+  const handleChange_CheckBox = (event) => {
+    event.target && setRememberMe(event.target.checked);
+  };
 
   return (
     <div className="d-flex justify-content-center align-items-center login-container">
@@ -45,12 +52,13 @@ function Login() {
           </div>
 
           <div className="d-flex justify-content-between mb-3">
-            <div>
-              <input type="checkbox" id="remember" className="checkbox" />
-              <label htmlFor="remember" className="ms-1">
-                {LangMessages.auth.rememberMe}
-              </label>
-            </div>
+            <UICheckbox
+              id="RememberMe"
+              checked={rememberMe}
+              label={LangMessages.auth.rememberMe}
+              value="rememberMe"
+              onChange={handleChange_CheckBox}
+            />
             <a
               className="btn-link p-0 text-decoration-none"
               onClick={() => navigate("/password-recovery")}
@@ -58,10 +66,11 @@ function Login() {
               {LangMessages.auth.forgotPassword}
             </a>
           </div>
-
-          <button type="submit" className="btn btn-primary w-100">
-            {LangMessages.auth.login}
-          </button>
+          <UIButton
+            type="submit"
+            className="btn-primary w-100"
+            label={LangMessages.auth.login}
+          />
 
           <p className="text-center mt-3">
             {LangMessages.auth.dontHaveAccount}{" "}
