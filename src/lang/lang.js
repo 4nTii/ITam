@@ -1,5 +1,3 @@
-import PasswordRecovery from "../pages/auth/PasswordRecovery";
-
 export const LangMessages = {
   currentLanguage: "en",
 
@@ -24,6 +22,14 @@ export const LangMessages = {
     passwordRecovery: "Password Recovery",
     sendRecoveryEmail: "Send Recovery Email",
     passwordRemembered: "Remembered your password?",
+    logout: "Log out",
+  },
+
+  user: {
+    profil: "Profil",
+    help: "Help!",
+    notification: "Notification",
+    notifications: "Notifications",
   },
 };
 
