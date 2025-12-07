@@ -1,0 +1,356 @@
+/* UITable - Container */
+.ui-table-container {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Header avec filtrage et export */
+.ui-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.ui-table-header-left {
+  flex: 1;
+}
+
+.ui-table-header-right {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* Input de filtrage (top right) */
+.ui-table-filter {
+  position: relative;
+}
+
+.ui-table-filter-input {
+  padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  outline: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  min-width: 250px;
+}
+
+.ui-table-filter-input:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.ui-table-filter-clear {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #6c757d;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+  transition: color 0.15s ease;
+}
+
+.ui-table-filter-clear:hover {
+  color: #dc3545;
+}
+
+/* Export buttons */
+.ui-table-export {
+  position: relative;
+}
+
+.ui-table-export-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.ui-table-export-btn:hover {
+  background-color: #0b5ed7;
+}
+
+.ui-table-export-menu {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  right: 0;
+  background-color: white;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 180px;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ui-table-export-menu button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.ui-table-export-menu button:hover {
+  background-color: #f8f9fa;
+}
+
+/* Info text */
+.ui-table-info {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+/* Wrapper pour scroll horizontal */
+.ui-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Table de base */
+.ui-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+/* En-têtes */
+.ui-table thead {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.ui-table th {
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: #495057;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.ui-table th.sortable {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.ui-table th.sortable:hover {
+  background-color: #a4d2ff;
+}
+
+.ui-table-header-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+/* Icônes de tri */
+.ui-table-sort-icon {
+  font-size: 0.8rem;
+  color: #6c757d;
+  min-width: 1rem;
+  text-align: center;
+}
+
+.ui-table-sort-icon .sort-active {
+  color: #0d6efd;
+  font-weight: bold;
+}
+
+.ui-table-sort-icon .sort-inactive {
+  opacity: 0.5;
+}
+
+/* Lignes du corps */
+.ui-table td {
+  padding: 0.75rem;
+  border-top: 1px solid #dee2e6;
+  color: #212529;
+}
+
+/* Rayures */
+.ui-table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Hover */
+.ui-table-hover tbody tr:hover {
+  background-color: #aadcff;
+  transition: background-color 0.2s ease;
+}
+
+/* Bordures */
+.ui-table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.ui-table-bordered th,
+.ui-table-bordered td {
+  border: 1px solid #dee2e6;
+}
+
+/* Style pour mieux distinguer les lignes (zebra striping) */
+.ui-table-distinct tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.ui-table-distinct tbody tr:nth-of-type(odd) {
+  background-color: #f5f5f5 !important;
+}
+
+.ui-table-distinct tbody tr:nth-of-type(even) {
+  background-color: #ffffff !important;
+}
+
+.ui-table-distinct tbody tr:hover {
+  background-color: #aadcff !important;
+  transition: background-color 0.2s ease;
+}
+
+/* Lignes cliquables */
+.ui-table-clickable tbody tr {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.ui-table-clickable tbody tr:hover {
+  background-color: rgba(13, 110, 253, 0.1);
+}
+
+/* Message vide */
+.ui-table-empty {
+  text-align: center;
+  padding: 2rem !important;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Pagination */
+.ui-table-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.ui-table-pagination-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  background-color: #fff;
+  color: #0d6efd;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ui-table-pagination-btn:hover:not(:disabled) {
+  background-color: #0d6efd;
+  color: white;
+  border-color: #0d6efd;
+}
+
+.ui-table-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ui-table-pagination-pages {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.ui-table-pagination-page {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  background-color: #fff;
+  color: #495057;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-width: 40px;
+}
+
+.ui-table-pagination-page:hover {
+  background-color: #e9ecef;
+}
+
+.ui-table-pagination-page.active {
+  background-color: #0d6efd;
+  color: white;
+  border-color: #0d6efd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ui-table th,
+  .ui-table td {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .ui-table-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ui-table-header-right {
+    flex-direction: column;
+  }
+
+  .ui-table-filter-input {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .ui-table-pagination {
+    flex-wrap: wrap;
+  }
+}
+
+/* Scrollbar personnalisée */
+.ui-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.ui-table-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.ui-table-wrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.ui-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

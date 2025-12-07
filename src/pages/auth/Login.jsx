@@ -1,8 +1,8 @@
 import { LangMessages } from "../../lang/lang";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import UIButton from "../../components/uiElements/UIButton";
-import UICheckbox from "../../components/uiElements/UICheckbox";
+import UIButton from "../../components/uiHTMLElements/UIButton";
+import UICheckbox from "../../components/uiHTMLElements/UICheckbox";
 import { useEffect, useState } from "react";
 
 function Login() {

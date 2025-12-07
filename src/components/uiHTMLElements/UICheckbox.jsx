@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./UICheckbox.css";
+import { LangMessages } from "../../lang/lang";
 
 /**
  * UICheckbox
@@ -34,7 +35,7 @@ export default function UICheckbox({
   checked = false, // single-checkbox mode
   value,
   selectedValues = null, // array for multi-choice, optional
-  label = "Checkbox",
+  label = LangMessages.uiComponents.checkbox.defaultLabel,
   deleteStyle = false,
   onChange,
   disabled = false,

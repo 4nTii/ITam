@@ -1,16 +1,96 @@
-# React + Vite
+# ITam - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Application web de gestion de parc informatique (IT Asset Management) développée avec React.
 
-Currently, two official plugins are available:
+## Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19.2** - Bibliothèque UI
+- **Vite 7.2** - Build tool et dev server
+- **React Router DOM 7.9** - Routing
+- **Bootstrap 5.3** - Framework CSS
+- **Lucide React** - Icônes
+- **ESLint** - Linter
 
-## React Compiler
+## Prérequis
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- Node.js >= 18
+- npm ou yarn
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Installer les dépendances
+npm install
+
+# ou avec yarn
+yarn install
+```
+
+## Commandes disponibles
+
+```bash
+# Démarrer le serveur de développement
+npm run dev
+
+# Build pour la production
+npm run build
+
+# Prévisualiser le build de production
+npm run preview
+
+# Linter le code
+npm run lint
+```
+
+## Structure du projet
+
+```
+src/
+├── components/          # Composants réutilisables
+│   └── uiHTMLElements/     # Composants UI (boutons, checkboxes, etc.)
+├── pages/              # Pages de l'application
+│   ├── auth/          # Pages d'authentification
+│   └── Dashboard.jsx  # Tableau de bord
+├── lang/              # Fichiers de traduction (multilingue)
+├── App.jsx            # Composant principal
+└── main.jsx           # Point d'entrée
+```
+
+## Fonctionnalités
+
+- Authentification utilisateur
+- Dashboard de gestion
+- Interface multilingue
+- Support du thème sombre
+- Gestion du parc informatique
+- Gestion des affectations de matériel
+- Suivi des cargaisons
+
+## Configuration
+
+Le projet utilise Vite avec le plugin `@vitejs/plugin-react-swc` pour Fast Refresh.
+
+## Documentation
+
+Voir le dossier `ITam documentation/` à la racine du projet pour :
+- Diagrammes UML
+- Cahier des charges
+- Architecture du système
+
+## API Backend
+
+Le frontend communique avec l'API Symfony située dans le dossier `ITamAPI/`.
+
+## Développement
+
+1. Assurez-vous que l'API backend est lancée
+2. Démarrez le serveur de dev : `npm run dev`
+3. L'application sera accessible sur `http://localhost:5173`
+
+## Build de production
+
+```bash
+npm run build
+```
+
+Les fichiers optimisés seront générés dans le dossier `dist/`.

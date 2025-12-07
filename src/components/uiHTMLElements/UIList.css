@@ -1,0 +1,51 @@
+/* UIList - Styles de base */
+.ui-list {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+}
+
+/* Orientation verticale (par défaut) */
+.ui-list-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.ui-list-vertical .ui-list-item {
+  margin-bottom: 0.5rem;
+}
+
+.ui-list-vertical .ui-list-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Orientation horizontale */
+.ui-list-horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ui-list-horizontal .ui-list-item {
+  margin-right: 1rem;
+}
+
+.ui-list-horizontal .ui-list-item:last-child {
+  margin-right: 0;
+}
+
+/* Liste sans marqueur */
+.ui-list-none {
+  list-style-type: none;
+}
+
+/* Élément de liste */
+.ui-list-item {
+  line-height: 1.5;
+}
+
+/* Effet hover si cliquable */
+.ui-list-item[style*="cursor: pointer"]:hover {
+  opacity: 0.8;
+}

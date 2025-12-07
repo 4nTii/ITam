@@ -1,0 +1,94 @@
+/* NavMain - Barre de navigation principale */
+
+.nav-main {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  gap: 2rem;
+}
+
+/* Logo Section - Far Left */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.logo-image {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.2s ease;
+}
+
+.logo-image:hover {
+  opacity: 0.85;
+}
+
+/* Center Section - Main Menu */
+.nav-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Right Section - User Widget */
+.nav-right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .nav-container {
+    padding: 0.5rem 1.5rem;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-container {
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .logo-image {
+    height: 34px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0.4rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .logo-image {
+    height: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-container {
+    padding: 0.4rem 0.75rem;
+  }
+
+  .logo-image {
+    height: 26px;
+  }
+}

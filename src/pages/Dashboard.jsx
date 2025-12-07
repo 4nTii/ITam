@@ -1,38 +1,50 @@
-import React, { useEffect } from "react";
-import UICheckbox from "../components/uiElements/UICheckbox.jsx";
-import { useState } from "react";
+import React from "react";
+import UITable from "../components/uiHTMLElements/UITable.jsx";
+import NavMain from "../components/uiStructure/NavMain";
+import LeftMenu from "../components/uiStructure/LeftMenu";
+import { useNavigate } from "react-router-dom";
+import { LangMessages } from "../lang/lang";
 
 function Dashboard() {
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const navigate = useNavigate();
+
+  // Handler functions for NavMain
+  const handleLogoClick = () => {
+    navigate("/");
+  };
+
+  const handleMyAccountClick = () => {
+    // navigate("/my-account");
+  };
+
+  const handleSettingsClick = () => {
+    // navigate("/settings");
+  };
+
+  const handleHelpClick = () => {
+    // navigate("/help");
+  };
 
   return (
     <div>
-      <UICheckbox
-        id="option1"
-        name="fruits"
-        label="Apple"
-        value="apple"
-        selectedValues={selectedOptions}
-        onChange={setSelectedOptions}
+      <NavMain
+        userName="John Doe"
+        onLogoClick={handleLogoClick}
+        onMyAccountClick={handleMyAccountClick}
+        onSettingsClick={handleSettingsClick}
+        onHelpClick={handleHelpClick}
       />
-
-      <UICheckbox
-        id="option2"
-        name="fruits"
-        label="Banana"
-        value="banana"
-        selectedValues={selectedOptions}
-        onChange={setSelectedOptions}
-      />
-
-      <UICheckbox
-        id="option3"
-        name="fruits"
-        label="Orange"
-        value="orange"
-        selectedValues={selectedOptions}
-        onChange={setSelectedOptions}
-      />
+      <div style={{ marginLeft: "60px", padding: "2rem" }}>
+        <h1>Dashboard</h1>
+        <p>Welcome to the ITam Dashboard!</p>
+        <p>
+          The left menu is always minimized. Hover over it to see the full menu
+          with all options.
+        </p>
+        <p>
+          Click on sections to expand sub-items and navigate to different pages.
+        </p>
+      </div>
     </div>
   );
 }

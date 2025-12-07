@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./UIButton.css";
+import { LangMessages } from "../../lang/lang";
 
 /**
  * UIButton — bouton réutilisable et générique pour l'ensemble du projet
@@ -15,7 +16,7 @@ import "./UIButton.css";
  */
 export default function UIButton({
   id = "",
-  label = "Button",
+  label = LangMessages.uiComponents.button.defaultLabel,
   onClick,
   disabled = false,
   loading = false,

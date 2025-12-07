@@ -1,0 +1,138 @@
+/* UserWidget - Widget utilisateur avec dropdown */
+
+.user-widget {
+  position: relative;
+  display: inline-block;
+}
+
+.user-widget-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.375rem 0.875rem;
+  cursor: pointer;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.user-widget-trigger:hover {
+  background-color: rgba(102, 126, 234, 0.08);
+  border-color: rgba(102, 126, 234, 0.15);
+}
+
+/* Avatar */
+.user-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Greeting text */
+.user-greeting {
+  font-size: 0.875rem;
+  color: #4a5568;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.user-greeting strong {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+/* Dropdown arrow */
+.dropdown-arrow {
+  font-size: 0.65rem;
+  color: #718096;
+  transition: transform 0.2s ease;
+  margin-left: -0.125rem;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown menu */
+.user-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.375rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
+  min-width: 200px;
+  z-index: 1000;
+  overflow: hidden;
+  animation: dropdownFadeIn 0.2s ease;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  color: #4a5568;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.user-dropdown-item:hover {
+  background-color: #f7fafc;
+  color: #667eea;
+}
+
+.dropdown-icon {
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .user-greeting {
+    display: none;
+  }
+
+  .user-widget-trigger {
+    padding: 0.5rem;
+  }
+}
